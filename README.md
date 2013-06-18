@@ -1,15 +1,8 @@
-SYNOPSIS
-========
-
-Operation Dashboard
-
-DESCRIPTION
-===========
+# Description
 
 The dashboard is intended to be used for performing health check tasks for IT systems.
 
-NOTES
-=====
+# Notes
 
 Version :
 
@@ -27,8 +20,7 @@ Requires :
     
     PowerShell V3 & .NET framework 4.0
 
-COMPONENT
-=========
+# Components
 
 Main file :
     
@@ -46,14 +38,12 @@ Includes :
     AIX.jpg (Icon for UNIX Operator Menu button)
     Windows (Icon for Windows Operator Menu button)
 
-FUNCTIONALITY
-=============
+# Functionality
 
 - To perform health check tasks for both Windows and UNIX servers
     
 - To launch Operator Menu for administrative tasks
 
-LICENSE
-=======
+# Legal
 
-The code is licensed under the GNU GPL license.
+The code is released under the GNU General Public License.
