@@ -36,7 +36,7 @@ Includes :
     putty-registry.reg (Registry of PuTTY configurations. regedit /e putty-registry.reg HKEY_CURRENT_USER\Software\Simontatham)
     prd_svc_caps.ppk (Private key to authenticate the Dashboard with remote UNIX hosts)
     AIX.jpg (Icon for UNIX Operator Menu button)
-    Windows (Icon for Windows Operator Menu button)
+    Windows.jpg (Icon for Windows Operator Menu button)
 
 # Functionality
 
