@@ -11,20 +11,26 @@ The dashboard is intended to be used for performing health check tasks for IT sy
 NOTES
 =====
 
-Version     : 1.0
+Version :
 
-Date        : 18 June 2013
+    1.0
 
-Author      : Chris C CHAU
+Date :
+    18 June 2013
 
-Requires    : PowerShell V3 & .NET framework 4.0
+Author :
+    Chris C CHAU
+
+Requires :
+    PowerShell V3 & .NET framework 4.0
 
 COMPONENT
 =========
 
-Main file   : Dashboard.ps1
+Main file :
+    Dashboard.ps1
 
-Includes    :
+Includes :
 
     Check-Status.ps1 (Routines for health checkings)
     Dashboard.xaml (Defination file for the GUI)
