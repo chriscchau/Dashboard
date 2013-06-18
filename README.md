@@ -16,18 +16,22 @@ Version :
     1.0
 
 Date :
+
     18 June 2013
 
 Author :
+    
     Chris C CHAU
 
 Requires :
+    
     PowerShell V3 & .NET framework 4.0
 
 COMPONENT
 =========
 
 Main file :
+    
     Dashboard.ps1
 
 Includes :
