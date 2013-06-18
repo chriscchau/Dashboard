@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CAPS>
+	<Healthcheck>
+		<Platform>SAN</Platform>
+		<ServerList>
+			<Server>ap07</Server>
+			<Server>ap17</Server>
+		</ServerList>
+		<Application>IBM SDDDSM Driver</Application>
+		<Component>SAN Disk Multipath</Component>
+		<Remark></Remark>
+		<Check Method="CLI">
+			<Command>'C:\Program Files\IBM\SDDDSM\datapath.exe' query device</Command>
+			<Keyword Type="Error">
+				<Item>CLOSE</Item>
+				<Item>FAILED</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>SAN</Platform>
+		<ServerList>
+			<Server></Server>
+		</ServerList>
+		<Application>Metro Mirror</Application>
+		<Component>MMCG_WL</Component>
+		<Remark></Remark>
+		<Check Method="CLI">
+			<Command>plink.exe -ssh -l admin -i prd_svc_caps.ppk 192.168.192.168 svcinfo lsrcconsistgrp -delim : MMCG_WL</Command>
+			<Keyword Type="Normal">
+				<Item>consistent_synchronized</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>Windows</Platform>
+		<ServerList>
+			<Server>ap07</Server>
+			<Server>ap17</Server>
+		</ServerList>
+		<Application>Teleform</Application>
+		<Component>Process</Component>
+		<Remark></Remark>
+		<Check Method="Process">
+			<Command></Command>
+			<Keyword Type="Normal">
+				<Item>tfreader</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>Windows</Platform>
+		<ServerList>
+			<Server></Server>
+		</ServerList>
+		<Application>Windows Cluster</Application>
+		<Component>Cluster Resources</Component>
+		<Remark></Remark>
+		<Check Method="Cluster">
+			<Command></Command>
+			<Keyword Type="Normal">
+				<Item>cluster</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>Windows</Platform>
+		<ServerList>
+			<Server>ap07</Server>
+			<Server>ap17</Server>
+		</ServerList>
+		<Application>Internet Information Services (IIS)</Application>
+		<Component>World Wide Web Publishing Service</Component>
+		<Remark></Remark>
+		<Check Method="Service">
+			<Command></Command>
+			<Keyword Type="Normal">
+				<Item>World Wide Web Publishing Service</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>Windows</Platform>
+		<ServerList>
+			<Server>ap07</Server>
+			<Server>ap17</Server>
+		</ServerList>
+		<Application>Internet Information Services (IIS)</Application>
+		<Component>example.com</Component>
+		<Remark></Remark>
+		<Check Method="Website">
+			<Command></Command>
+			<Keyword Type="Normal">
+				<Item>example.com</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>Windows</Platform>
+		<ServerList>
+			<Server>ap07</Server>
+			<Server>ap17</Server>
+		</ServerList>
+		<Application>Task Scheduler</Application>
+		<Component>Scheduled Task</Component>
+		<Remark></Remark>
+		<Check Method="ScheduledTask">
+			<Command></Command>
+			<Keyword Type="Normal">
+				<Item>Copy-Eventlog</Item>
+				<Item>Housekeep</Item>
+				<Item>Monitor</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>UNIX</Platform>
+		<ServerList>
+			<Server>ap01</Server>
+		</ServerList>
+		<Application>Health Check</Application>
+		<Component>System</Component>
+		<Remark></Remark>
+		<Check Method="CLI">
+			<Command>plink.exe -ssh -l root -i prd_svc_caps.ppk 10.10.10.10 /var/adm/support/check.sh</Command>
+			<Keyword Type="Error">
+				<Item>FAILED</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>UNIX</Platform>
+		<ServerList>
+			<Server>ap01</Server>
+		</ServerList>
+		<Application>Weblogic</Application>
+		<Component>Weblogic</Component>
+		<Remark></Remark>
+		<Check Method="CLI">
+			<Command>plink.exe -ssh -l root -i prd_svc_caps.ppk 10.10.10.10 "su - oracle -c '/var/adm/support/weblogic/health_check/health_check.sh'"</Command>
+			<Keyword Type="Error">
+				<Item>FAILED</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>UNIX</Platform>
+		<ServerList>
+			<Server>db02</Server>
+		</ServerList>
+		<Application>Database</Application>
+		<Component>Database</Component>
+		<Remark></Remark>
+		<Check Method="CLI">
+			<Command>plink.exe -ssh -l root -i prd_svc_caps.ppk 10.10.10.10 "su - oracle -c '/var/adm/support/oracle_RAC/health_check/health_check.sh'"</Command>
+			<Keyword Type="Error">
+				<Item>FAILED</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+	<Healthcheck>
+		<Platform>UNIX</Platform>
+		<ServerList>
+			<Server>db02</Server>
+		</ServerList>
+		<Application>Database</Application>
+		<Component>ASM</Component>
+		<Remark></Remark>
+		<Check Method="CLI">
+			<Command>plink.exe -ssh -l root -i prd_svc_caps.ppk 10.10.10.10 "su - grid -c '/var/adm/support/asm/health_check/health_check.sh'"</Command>
+			<Keyword Type="Error">
+				<Item>FAILED</Item>
+			</Keyword>
+		</Check>
+	</Healthcheck>
+</CAPS>
